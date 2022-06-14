@@ -28,7 +28,8 @@ export const Container = styled.section`
         display: block;
         width: 180px;
         height: 70px;
-        font-size: 16px;
+        font-size: 20px;
+        font-weight: bold;
         border-radius: 5px;
         cursor: pointer;
         user-select: none;

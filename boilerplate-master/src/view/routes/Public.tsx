@@ -16,12 +16,16 @@ export const Public: FC = () => {
                 path = { book.ROOT }
             />
             <Route
-                element = { <Pages.Lesson1 /> }
-                path = { book.LESSON1 }
-            />
-            <Route
                 element = { <Pages.Keyboard /> }
                 path = { book.KEYBOARD }
+            />
+            <Route
+                element = { <Pages.Lesson1and2 /> }
+                path = { book.LESSON1AND2 }
+            />
+            <Route
+                element = { <Pages.Accordion /> }
+                path = { book.ACCORDION }
             />
             <Route
                 element = {

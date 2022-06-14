@@ -1,3 +1,4 @@
 export const ROOT = '/';
 export const KEYBOARD = '/keyboard';
-export const LESSON1 = '/lesson1';
+export const LESSON1AND2 = '/lesson1and2';
+export const ACCORDION = '/accordion';

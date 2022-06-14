@@ -1,0 +1,38 @@
+[
+	{
+		"title": "American writer of",
+		"description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+		"published": "2020-11-21T15:32:45.167Z",
+		"likes": 315,
+		"comments": 10,
+		"image": "https://images.pexels.com/photos/2967810/pexels-photo-2967810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+		"tags": [
+			"literature",
+			"books"
+		]
+	},
+	{
+		"title": "Another article",
+		"description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.",
+		"published": "2019-10-15T15:32:45.167Z",
+		"likes": 201,
+		"comments": 12,
+		"image": "https://neolit.club/c/o/articles/31/muzyka_dlya_sporta_i_trenirovok.jpg",
+		"tags": [
+			"music",
+			"sport"
+		]
+	},
+	{
+		"title": "Popular article",
+		"description": "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33.",
+		"published": "2022-02-24T15:32:45.167Z",
+		"likes": 456,
+		"comments": 42,
+		"image": "https://dvyvvujm9h0uq.cloudfront.net/com/articles/1574743059-art-blogs.jpg",
+		"tags": [
+			"article",
+			"art"
+		]
+	}
+]

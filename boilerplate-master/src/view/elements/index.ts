@@ -3,3 +3,8 @@ export * from './KeyboardAppElements/FirstTwoRows';
 export * from './KeyboardAppElements/ThirdRow';
 export * from './KeyboardAppElements/FourthRow';
 export * from './KeyboardAppElements/LastRow';
+export * from './Lesson1and2Elements/CommentsCounter';
+export * from './Lesson1and2Elements/LikesCounter';
+export * from './Lesson1and2Elements/tags';
+export * from './AccordionElements/AccordionItem';
+export * from './AccordionElements/TaskDescription';

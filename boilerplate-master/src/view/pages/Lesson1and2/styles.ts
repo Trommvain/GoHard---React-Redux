@@ -2,12 +2,10 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 200px;
-    height: 200px;
-    padding: 50px;
-    background-color: wheat;
-    text-align: center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
     p {
         font-size: 20px;
         font-weight: bold;
