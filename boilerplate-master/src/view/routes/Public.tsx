@@ -28,6 +28,10 @@ export const Public: FC = () => {
                 path = { book.ACCORDION }
             />
             <Route
+                element = { <Pages.Lesson3 /> }
+                path = { book.LESSON3 }
+            />
+            <Route
                 element = {
                     <Navigate
                         replace

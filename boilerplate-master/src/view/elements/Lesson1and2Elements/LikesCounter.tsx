@@ -22,8 +22,7 @@ const LikesCounterStyle = styled.span`
 let isLiked = false;
 
 export const LikesCounter: FC<likes> = (props: likes) => {
-    let counts = props.likes;
-    const [ value, setValue ] = useState(counts);
+    const [ value, setValue ] = useState(props.likes);
 
     const likeChanger = () => {
         if (!isLiked) {

@@ -20,11 +20,9 @@ const CommentsCounterStyle = styled.span`
 `;
 
 export const CommentsCounter: FC<comments> = (props: comments) => {
-    let counts = props.comments;
-
     return (
         <CommentsCounterStyle>
-            { counts }
+            { props.comments }
         </CommentsCounterStyle>
     );
 };

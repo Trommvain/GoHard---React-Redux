@@ -8,3 +8,4 @@ export * from './Lesson1and2Elements/LikesCounter';
 export * from './Lesson1and2Elements/tags';
 export * from './AccordionElements/AccordionItem';
 export * from './AccordionElements/TaskDescription';
+export * from './Lesson3Elements/L3TaskDescription';
