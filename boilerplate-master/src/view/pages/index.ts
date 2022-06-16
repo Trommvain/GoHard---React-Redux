@@ -7,3 +7,4 @@ export const Lesson1and2 = lazy(() => import(/* webpackChunkName: "Lesson1and2" 
 export const Keyboard = lazy(() => import(/* webpackChunkName: "Keyboard" */ './Keyboard'));
 export const Accordion = lazy(() => import(/* webpackChunkName: "Accordion" */ './Accordion'));
 export const Lesson3 = lazy(() => import(/* webpackChunkName: "Lesson3" */ './Lesson3'));
+export const Secret = lazy(() => import(/* webpackChunkName: "Secret" */ './Secret'));
