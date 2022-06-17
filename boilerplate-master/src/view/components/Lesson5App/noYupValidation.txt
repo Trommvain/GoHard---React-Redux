@@ -1,0 +1,144 @@
+// Core
+import React from 'react';
+import { Field, Formik } from 'formik';
+
+// Styles
+import * as S from './styles';
+
+//Types
+import { ErrorsTypes, FormValuesTypes } from '../../pages/Lesson5';
+
+const validate = (values: FormValuesTypes) => {
+    const errors: ErrorsTypes = {};
+
+    if (!values.firstName) {
+        errors.firstName = 'Required';
+    } else if (!/^[A-zА-яЁё]+$/.test(values.firstName)) {
+        errors.firstName = 'Incorrect name';
+    }
+
+    if (!values.surname) {
+        errors.surname = 'Required';
+    } else if (!/^[A-zА-яЁё]+$/.test(values.surname)) {
+        errors.surname = 'Incorrect surname';
+    }
+
+    if (values.age! && (values.age! < 6 || values.age! > 60)) {
+        errors.age = 'Incorrect age';
+    }
+
+    if (!values.email) {
+        errors.email = 'Required';
+    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+        errors.email = 'Invalid email adress';
+    }
+
+    return errors;
+};
+
+export const StudentRegistrationApp = () => {
+    const initialValues: FormValuesTypes = {
+        firstName:  '',
+        surname:    '',
+        age:        '',
+        email:      '',
+        sex:        'male',
+        speciality: 'designer',
+    };
+
+    return (
+        <S.Container>
+            <Formik
+                initialValues = { initialValues }
+                validate = { validate }
+                onSubmit = { (values) => {
+                    values.age ? values.age = Number(values.age) : '';
+                    console.log(values);
+                } }>
+
+                {({ errors, touched, handleSubmit }) => (
+                    <form onSubmit = { handleSubmit }>
+                        <fieldset>
+                            <legend>Student Registration</legend>
+                            {/*Name*/}
+                            <section className = { errors.firstName && touched.firstName ? 'error' : '' }>
+                                <label className = 'form-item'>Name</label>
+                                <Field
+                                    name = 'firstName'
+                                    placeholder = 'Your name...'
+                                    type = 'text'
+                                />
+                            </section>
+                            {errors.firstName && touched.firstName && <div>{errors.firstName}</div>}
+                            {/*Surname*/}
+                            <section className = { errors.surname && touched.surname ? 'error' : '' }>
+                                <label className = 'form-item'>Surname</label>
+                                <Field
+                                    name = 'surname'
+                                    placeholder = 'Your surname...'
+                                    type = 'text'
+                                />
+                            </section>
+                            {errors.surname && touched.surname && <div>{errors.surname}</div>}
+                            {/*Age*/}
+                            <section className = { errors.age && touched.age ? 'error' : '' }>
+                                <label className = 'form-item'>Age</label>
+                                <Field
+                                    name = 'age'
+                                    placeholder = 'Your age...'
+                                    type = 'text'
+                                />
+                            </section>
+                            {errors.age && touched.age && <div>{errors.age}</div>}
+                            {/*Email*/}
+                            <section className = { errors.email && touched.email ? 'error' : '' }>
+                                <label className = 'form-item'>Email </label>
+                                <Field
+                                    name = 'email'
+                                    placeholder = 'Your email...'
+                                    type = 'email'
+                                />
+                            </section>
+                            {errors.email && touched.email && <div>{errors.email}</div>}
+                            {/*Sex*/}
+                            <label className = 'form-item'>Sex</label>
+                            <label>
+                                <Field
+                                    checked = 'checked'
+                                    id = 'male'
+                                    name = 'sex'
+                                    type = 'radio'
+                                    value = 'male'
+                                />
+                                Male
+                            </label>
+                            <label>
+                                <Field
+                                    id = 'female'
+                                    name = 'sex'
+                                    type = 'radio'
+                                    value = 'female'
+                                />
+                                Female
+                            </label>
+                            {/*Speciality*/}
+                            <label className = 'form-item'>Speciality</label>
+                            <Field
+                                as = 'select'
+                                name = 'speciality'>
+                                <option value = 'designer'>designer</option>
+                                <option value = 'developer'>developer</option>
+                                <option value = 'writer'>writer</option>
+                            </Field>
+
+                            <button
+                                className = 'submit-button'
+                                type = 'submit'>Submit
+                            </button>
+                        </fieldset>
+                    </form>
+                )}
+            </Formik>
+        </S.Container>
+    );
+};

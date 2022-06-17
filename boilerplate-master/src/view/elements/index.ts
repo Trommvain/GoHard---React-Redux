@@ -10,3 +10,4 @@ export * from './AccordionElements/AccordionItem';
 export * from './AccordionElements/TaskDescription';
 export * from './Lesson3Elements/L3TaskDescription';
 export * from './Lesson4Elements/L4TaskDescription';
+export * from './Lesson5Elements/L5TaskDescription';
