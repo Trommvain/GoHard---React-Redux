@@ -5,3 +5,5 @@ export const ACCORDION = '/accordion';
 export const LESSON3 = '/lesson3';
 export const SECRET = '/secret';
 export const LESSON5 = '/lesson5';
+export const LESSON6 = '/registration';
+export const PROFILE = '/student';

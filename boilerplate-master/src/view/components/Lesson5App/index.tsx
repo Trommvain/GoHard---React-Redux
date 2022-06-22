@@ -8,6 +8,8 @@ import * as S from './styles';
 
 //Types
 import { FormValuesTypes } from '../../pages/Lesson5';
+import { useStudent } from '../../../bus/student';
+import { NavLink } from 'react-router-dom';
 
 const validationSchema = Yup.object().shape({
     firstName: Yup.string()
@@ -34,6 +36,8 @@ export const StudentRegistrationApp = () => {
         speciality: 'designer',
     };
 
+    const updateStudentData = useStudent().updateProfile;
+
     return (
         <S.Container>
             <Formik
@@ -42,9 +46,10 @@ export const StudentRegistrationApp = () => {
                 onSubmit = { (values) => {
                     values.age ? values.age = Number(values.age) : '';
                     console.log(values);
+                    updateStudentData(values);
                 } }>
 
-                {({ errors, touched, handleSubmit }) => (
+                {({ isSubmitting, errors, touched, handleSubmit }) => (
                     <form onSubmit = { handleSubmit }>
                         <fieldset>
                             <legend>Student Registration</legend>
@@ -123,6 +128,10 @@ export const StudentRegistrationApp = () => {
                                 className = 'submit-button'
                                 type = 'submit'>Submit
                             </button>
+                            <NavLink
+                                className = { isSubmitting ? 'profile-button' : 'profile-disabled' }
+                                to = '/student'>View Profile
+                            </NavLink>
                         </fieldset>
                     </form>
                 )}

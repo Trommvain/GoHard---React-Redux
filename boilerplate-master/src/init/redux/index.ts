@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 // Reducers
 import togglers from '../../bus/client/togglers';
+import student from '../../bus/student/slice';
 // import __entityName__ from '../../bus/__entityName__/slice';
 
 // Middleware
@@ -14,6 +15,7 @@ import { rootSaga } from './rootSaga';
 export const store = configureStore({
     reducer: {
         togglers,
+        student,
         // __entityName__,
     },
     middleware,

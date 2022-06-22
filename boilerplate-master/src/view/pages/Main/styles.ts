@@ -5,6 +5,7 @@ export const Container = styled.section`
     position: relative;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -14,14 +15,16 @@ export const Container = styled.section`
     
 
     header {
-        height: 200px;
-        line-height: 200px;
+        height: 150px;
         font-size: 48px;
+        text-align: center;
+        margin-top: 5rem;
     }
 
     footer {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 10px;
 
         button {

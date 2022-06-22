@@ -60,4 +60,37 @@ export const Container = styled.div`
                     background-color: darkgreen;
                 }
         }
+
+        .profile-button {
+            display: block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 4px;
+            cursor: pointer;
+            user-select: none;
+            margin: 0 auto;
+            text-decoration: none;
+
+                &:hover {
+                    color: black;
+                    background-color: lightgreen;
+                    transition: none;
+                    transform: scale(1.1);
+                }
+
+                &:active {
+                    background-color: darkgreen;
+                }
+        }
+
+        .profile-disabled {
+            display: none;
+        }
 `;

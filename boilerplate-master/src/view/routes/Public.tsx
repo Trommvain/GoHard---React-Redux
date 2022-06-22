@@ -44,6 +44,14 @@ export const Public: FC = () => {
                 path = { book.LESSON5 }
             />
             <Route
+                element = { <Pages.Lesson6 /> }
+                path = { book.LESSON6 }
+            />
+            <Route
+                element = { <Pages.Profile /> }
+                path = { book.PROFILE }
+            />
+            <Route
                 element = {
                     <Navigate
                         replace
