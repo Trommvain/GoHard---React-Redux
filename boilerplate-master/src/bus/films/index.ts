@@ -20,7 +20,7 @@ export const useFilms = () => {
             });
 
             if (response.status !== 200) {
-                throw new Error('people fetch failed');
+                throw new Error('films fetch failed');
             }
 
             const data: Films = await response.json();
