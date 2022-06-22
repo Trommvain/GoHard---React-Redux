@@ -9,7 +9,7 @@ import { ErrorBoundary } from '../../components';
 import { Container } from './styles';
 
 // Book
-import { ACCORDION, KEYBOARD, LESSON1AND2, LESSON3, LESSON5, SECRET, LESSON6 } from '../../routes/book';
+import { ACCORDION, KEYBOARD, LESSON1AND2, LESSON3, LESSON5, SECRET, LESSON6, LESSON7, LESSON71 } from '../../routes/book';
 
 const Main: FC = () => {
     const navigate = useNavigate();
@@ -27,6 +27,8 @@ const Main: FC = () => {
                 <button onClick = { () => navigate(SECRET) }>Lesson 4</button>
                 <button onClick = { () => navigate(LESSON5) }>Lesson 5</button>
                 <button onClick = { () => navigate(LESSON6) }>Lesson 6</button>
+                <button onClick = { () => navigate(LESSON7) }>Lesson 7</button>
+                <button onClick = { () => navigate(LESSON71) }>Lesson 7.1</button>
             </footer>
         </Container>
     );

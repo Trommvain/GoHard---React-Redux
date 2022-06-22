@@ -7,3 +7,7 @@ export const SECRET = '/secret';
 export const LESSON5 = '/lesson5';
 export const LESSON6 = '/registration';
 export const PROFILE = '/student';
+export const LESSON7 = '/people';
+export const PERSON = '/people/:id';
+export const LESSON71 = '/films';
+export const FILM = '/films/:id';

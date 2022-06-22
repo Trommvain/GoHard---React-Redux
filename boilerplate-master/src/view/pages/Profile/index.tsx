@@ -3,7 +3,6 @@ import React, { FC } from 'react';
 import { useStudent } from '../../../bus/student';
 import { useNavigate } from 'react-router-dom';
 
-
 // Components
 import { ErrorBoundary } from '../../components';
 

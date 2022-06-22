@@ -3,32 +3,31 @@ import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Components
-import { ErrorBoundary } from '../../components';
-import { StudentRegistrationApp } from '../../components/Lesson5App';
-import { L6TaskDescription } from '../../elements';
-
-// Tools
-import { ROOT } from '../../routes/book';
+import { ErrorBoundary, FilmsApp } from '../../components';
 
 // Styles
 import * as S from './styles';
 
-const StudentRegistrationForm: FC = () => {
+//Book
+import { ROOT } from '../../routes/book';
+import { L71TaskDescription } from '../../elements';
+
+const Lesson71: FC = () => {
     const navigate = useNavigate();
 
     return (
         <>
             <S.Container>
-                <StudentRegistrationApp/>
+                <FilmsApp/>
                 <button onClick = { () => navigate(ROOT) }>Back to main</button>
             </S.Container>
-            <L6TaskDescription/>
+            <L71TaskDescription/>
         </>
     );
 };
 
 export default () => (
     <ErrorBoundary>
-        <StudentRegistrationForm/>
+        <Lesson71 />
     </ErrorBoundary>
 );

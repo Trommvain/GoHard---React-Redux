@@ -11,3 +11,7 @@ export const Secret = lazy(() => import(/* webpackChunkName: "Secret" */ './Secr
 export const Lesson5 = lazy(() => import(/* webpackChunkName: "Lesson5" */ './Lesson5'));
 export const Lesson6 = lazy(() => import(/* webpackChunkName: "Lesson6" */ './Lesson6'));
 export const Profile = lazy(() => import(/* webpackChunkName: "Profile" */ './Profile'));
+export const Lesson7 = lazy(() => import(/* webpackChunkName: "Lesson7" */ './Lesson7'));
+export const Person = lazy(() => import(/* webpackChunkName: "Person" */ './Person'));
+export const Lesson71 = lazy(() => import(/* webpackChunkName: "Lesson71" */ './Lesson71'));
+export const Film = lazy(() => import(/* webpackChunkName: "Film" */ './Film'));

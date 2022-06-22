@@ -11,3 +11,6 @@ export * from './AccordionElements/TaskDescription';
 export * from './Lesson3Elements/L3TaskDescription';
 export * from './Lesson4Elements/L4TaskDescription';
 export * from './Lesson5Elements/L5TaskDescription';
+export * from './Lesson6Elements/L6TaskDescription';
+export * from './Lesson7Elements/L7TaskDescription';
+export * from './Lesson71Elements/L71TaskDescription';
