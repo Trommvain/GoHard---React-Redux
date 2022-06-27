@@ -2,14 +2,7 @@
 import { CaseReducer, PayloadAction } from '@reduxjs/toolkit';
 
 // State
-export type People = {
-    count: number,
-    next: string,
-    previous: null,
-    results: Array<PeopleTypes>
-}
-
-export type PeopleTypes = {
+export type Man = {
     birth_year: string,
     created: string,
     edited: string,
@@ -28,7 +21,16 @@ export type PeopleTypes = {
     vehicles: Array<string>
 }
 
-export type PeopleState = People | null
+export type ExtendedMan = {
+    _id: string
+} & Man
+
+export type People = Array<ExtendedMan>
+
+export type PeopleState = {
+    people: People | null
+    error: null | string
+}
 
 // Contracts
-export type BaseContact<T = any> = CaseReducer<PeopleState, PayloadAction<T>>
+export type BaseContract<T = any> = CaseReducer<PeopleState, PayloadAction<T>>

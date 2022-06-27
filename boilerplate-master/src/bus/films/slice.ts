@@ -7,7 +7,10 @@ import * as types from './types';
 // Reducers
 import * as reducers from './reducers';
 
-const initialState = null;
+const initialState: types.FilmsState = {
+    films: null,
+    error: null,
+};
 
 export const filmsSlice = createSlice<types.FilmsState, typeof reducers>({
     name: 'films',

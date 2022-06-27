@@ -7,11 +7,11 @@ import { useSelector } from '../../tools/hooks';
 import { peopleActions } from './slice';
 
 //Types
-import { People } from './types';
+import { Man } from './types';
 
 export const usePeople = () => {
     const dispatch = useDispatch();
-    const people = useSelector((state) => state.people);
+    const { error, people } = useSelector((state) => state.people);
 
     const fetchPeople = async () => {
         try {
@@ -20,21 +20,25 @@ export const usePeople = () => {
             });
 
             if (response.status !== 200) {
-                throw new Error('people fetch failed');
+                throw new Error(`Error occured: ${response.status}`);
             }
 
-            const data: People = await response.json();
+            const data: { results: Array<Man> } = await response.json();
 
-            dispatch(peopleActions.setPeople(data));
-        } catch (error) { }  // eslint-disable-line no-empty
+            dispatch(peopleActions.setPeople(data.results));
+        } catch (errors: string | any) {
+            dispatch(peopleActions.handlePeopleError(errors.message));
+        }
     };
 
     useEffect(() => {
-        fetchPeople();
+        if (!people) {
+            fetchPeople();
+        }
     }, []);
 
     return {
         people,
-        setPeople: (people: People) => dispatch(peopleActions.setPeople(people)),
+        error,
     };
 };

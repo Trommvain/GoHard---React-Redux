@@ -17,13 +17,11 @@ const StudentRegistrationForm: FC = () => {
     const navigate = useNavigate();
 
     return (
-        <>
-            <S.Container>
-                <StudentRegistrationApp/>
-                <button onClick = { () => navigate(ROOT) }>Back to main</button>
-            </S.Container>
+        <S.Container>
+            <StudentRegistrationApp/>
+            <button onClick = { () => navigate(ROOT) }>Back to main</button>
             <L6TaskDescription/>
-        </>
+        </S.Container>
     );
 };
 

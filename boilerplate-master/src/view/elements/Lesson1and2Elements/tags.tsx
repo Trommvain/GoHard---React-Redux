@@ -19,13 +19,13 @@ const TagsStyle = styled.div`
 
 export const Tags: FC<tags> = (props: tags) => {
     return (
-        <>
+        <div className = 'tags'>
             <TagsStyle>
                 { props.tags[ 0 ] }
             </TagsStyle>
             <TagsStyle>
                 { props.tags[ 1 ] }
             </TagsStyle>
-        </>
+        </ div>
     );
 };

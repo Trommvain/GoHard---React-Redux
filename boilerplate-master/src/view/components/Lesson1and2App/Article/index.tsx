@@ -18,9 +18,7 @@ export const Article: FC<source> = (props: source) => {
                         src = { props.image }
                     />
                 </div>
-                <div className = 'tags'>
-                    <Tags tags = { props.tags }></Tags>
-                </div>
+                <Tags tags = { props.tags }></Tags>
             </header>
             <article>
                 <h1>{ props.title }</h1>

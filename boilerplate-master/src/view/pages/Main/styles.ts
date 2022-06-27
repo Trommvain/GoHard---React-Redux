@@ -25,6 +25,7 @@ export const Container = styled.section`
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
         gap: 10px;
 
         button {

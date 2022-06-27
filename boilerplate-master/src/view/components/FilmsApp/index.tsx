@@ -1,31 +1,35 @@
 // Core
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
+// Bus
 import { useFilms } from '../../../bus/films';
 
 // Styles
 import * as S from './styles';
 
 export const FilmsApp = () => {
-    const getFilms = useFilms().films;
-    let filmsList = null;
+    const { films, error } = useFilms();
 
-    if (getFilms?.results) {
-        filmsList = getFilms!.results.map((item, index) => (
-            <NavLink
-                className = 'link'
-                key = { index }
-                to = { `/films/${index + 1}` }>{ item.title }
-            </NavLink>
-        ));
-    } else {
-        filmsList = <span>Loading data...</span>;
+    if (!films && !error) {
+        return <div>Loading...</div>;
+    } else if (error) {
+        return <div>{error}</div>;
     }
 
     return (
         <S.Container>
             <h1>Films List:</h1>
-            {filmsList}
+            {
+                films?.map((film) => (
+                    <NavLink
+                        className = 'link'
+                        key = { film._id }
+                        to = { `/films/${film._id}` }>
+                        {film.title}
+                    </NavLink>
+                ))
+            }
         </S.Container>
     );
 };

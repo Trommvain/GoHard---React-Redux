@@ -44,21 +44,19 @@ const Persons = () => {
     console.log(`isClientError: ${isClientError}`);
 
     return (
-        <>
-            <S.Container>
-                <h1>Person's List:</h1>
-                { isFetching
-                    ? <p>Loading data...</p>
-                    : isClientError
-                        ? <p>Incorrect url request</p>
-                        : isServerError
-                            ? <p>Server does not response</p>
-                            : <ol>{ items }</ol>
-                }
-                <button onClick = { () => navigate(ROOT) }>Back to main</button>
-            </S.Container>
+        <S.Container>
+            <h1>Person's List:</h1>
+            { isFetching
+                ? <p>Loading data...</p>
+                : isClientError
+                    ? <p>Incorrect url request</p>
+                    : isServerError
+                        ? <p>Server does not response</p>
+                        : <ol>{ items }</ol>
+            }
+            <button onClick = { () => navigate(ROOT) }>Back to main</button>
             <L3TaskDescription/>
-        </>
+        </S.Container>
     );
 };
 

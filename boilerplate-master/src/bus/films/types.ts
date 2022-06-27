@@ -2,14 +2,8 @@
 import { CaseReducer, PayloadAction } from '@reduxjs/toolkit';
 
 // State
-export type Films = {
-    count: number,
-    next: null,
-    previous: null,
-    results: Array<FilmsTypes>
-}
 
-export type FilmsTypes = {
+export type Film = {
     title: string,
     episode_id: string,
     opening_crawl: string,
@@ -17,7 +11,17 @@ export type FilmsTypes = {
     producer: string,
     release_date: string
 }
-export type FilmsState = Films | null
+
+export type ExtendedFilm = {
+    _id: string
+} & Film
+
+export type Films = Array<ExtendedFilm>
+
+export type FilmsState = {
+    films: Films | null
+    error: null | string
+}
 
 // Contracts
-export type BaseContact<T = any> = CaseReducer<FilmsState, PayloadAction<T>>
+export type BaseContract<T = any> = CaseReducer<FilmsState, PayloadAction<T>>

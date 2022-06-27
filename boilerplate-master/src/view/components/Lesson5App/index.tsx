@@ -9,7 +9,10 @@ import * as S from './styles';
 //Types
 import { FormValuesTypes } from '../../pages/Lesson5';
 import { useStudent } from '../../../bus/student';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+//Book
+import { PROFILE } from '../../routes/book';
 
 const validationSchema = Yup.object().shape({
     firstName: Yup.string()
@@ -37,6 +40,7 @@ export const StudentRegistrationApp = () => {
     };
 
     const updateStudentData = useStudent().updateProfile;
+    const navigate = useNavigate();
 
     return (
         <S.Container>
@@ -47,9 +51,10 @@ export const StudentRegistrationApp = () => {
                     values.age ? values.age = Number(values.age) : '';
                     console.log(values);
                     updateStudentData(values);
+                    navigate(PROFILE);
                 } }>
 
-                {({ isSubmitting, errors, touched, handleSubmit }) => (
+                {({ errors, touched, handleSubmit }) => (
                     <form onSubmit = { handleSubmit }>
                         <fieldset>
                             <legend>Student Registration</legend>
@@ -128,10 +133,6 @@ export const StudentRegistrationApp = () => {
                                 className = 'submit-button'
                                 type = 'submit'>Submit
                             </button>
-                            <NavLink
-                                className = { isSubmitting ? 'profile-button' : 'profile-disabled' }
-                                to = '/student'>View Profile
-                            </NavLink>
                         </fieldset>
                     </form>
                 )}

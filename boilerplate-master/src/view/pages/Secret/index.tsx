@@ -16,13 +16,11 @@ const Secret: FC = () => {
     const navigate = useNavigate();
 
     return (
-        <>
-            <S.Container>
-                <SecretApp/>
-                <button onClick = { () => navigate(ROOT) }>Back to main</button>
-            </S.Container>
+        <S.Container>
+            <SecretApp/>
+            <button onClick = { () => navigate(ROOT) }>Back to main</button>
             <L4TaskDescription/>
-        </>
+        </S.Container>
     );
 };
 

@@ -19,6 +19,7 @@ export const L3TaskDescriptionStyled = styled.div`
     }
 
     .common-text {
+        height: auto;
         font-size: 18px;
         color: gray;
         line-height: 1;

@@ -16,13 +16,11 @@ const Lesson7: FC = () => {
     const navigate = useNavigate();
 
     return (
-        <>
-            <S.Container>
-                <PeopleApp/>
-                <button onClick = { () => navigate(ROOT) }>Back to main</button>
-            </S.Container>
+        <S.Container>
+            <PeopleApp/>
+            <button onClick = { () => navigate(ROOT) }>Back to main</button>
             <L7TaskDescription/>
-        </>
+        </S.Container>
     );
 };
 

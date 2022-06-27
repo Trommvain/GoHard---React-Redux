@@ -57,14 +57,12 @@ const Accordion: FC<TitleType> = (props: TitleType) => {
     ));
 
     return (
-        <>
-            <S.Container>
-                { <h1>{ props.title }</h1> }
-                { items }
-                <button onClick = { () => navigate(ROOT) }>Back to main</button>
-            </S.Container>
+        <S.Container>
+            { <h1>{ props.title }</h1> }
+            { items }
+            <button onClick = { () => navigate(ROOT) }>Back to main</button>
             <TaskDescription></TaskDescription>
-        </>
+        </S.Container>
     );
 };
 

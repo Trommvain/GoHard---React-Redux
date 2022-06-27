@@ -7,11 +7,11 @@ import { useSelector } from '../../tools/hooks';
 import { filmsActions } from './slice';
 
 //Types
-import { Films } from './types';
+import { Film } from './types';
 
 export const useFilms = () => {
     const dispatch = useDispatch();
-    const films = useSelector((state) => state.films);
+    const { error, films } = useSelector((state) => state.films);
 
     const fetchFilms = async () => {
         try {
@@ -20,21 +20,25 @@ export const useFilms = () => {
             });
 
             if (response.status !== 200) {
-                throw new Error('films fetch failed');
+                throw new Error(`Error occured: ${response.status}`);
             }
 
-            const data: Films = await response.json();
+            const data: { results: Array<Film> } = await response.json();
 
-            dispatch(filmsActions.setFilms(data));
-        } catch (error) { }  // eslint-disable-line no-empty
+            dispatch(filmsActions.setFilms(data.results));
+        } catch (errors: string | any) {
+            dispatch(filmsActions.handleFilmsError(errors.message));
+        }
     };
 
     useEffect(() => {
-        fetchFilms();
+        if (!films) {
+            fetchFilms();
+        }
     }, []);
 
     return {
         films,
-        setFilms: (films: Films) => dispatch(filmsActions.setFilms(films)),
+        error,
     };
 };
